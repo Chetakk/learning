@@ -64,5 +64,11 @@ int main(void)
 {
     enqueue(15);
     enqueue(16);
+    enqueue(45);
+    enqueue(23);
+    enqueue(44);
+    enqueue(32);
+    dequeue();
+    dequeue();
     display();
 }
