@@ -70,9 +70,11 @@ int linear(int* a,int size,int search)
     {
         if(a[i]==search)
         {
-            
+            return i;
         }
+
     }
+    return -1;
 }
 
 
@@ -84,4 +86,13 @@ int main()
     printarr(a,n);
     selection(a,n);
     printarr(a,n);
+    int sn=linear(a,n,s);
+    if(sn==-1)
+    {
+        printf("Element not found");
+    }
+    else
+    {
+        printf("Element %d is found at index %d\n",s,sn);
+    }
 }
