@@ -1,36 +1,37 @@
 #include <iostream>
-
-class LengthConverter {
+using namespace std;
+class Length {
 private:
     double meters;
 
 public:
-    LengthConverter(double m = 0.0) : meters(m) {}
+    Length(double m = 0.0) : meters(m) {}
 
     // Operator overloading for adding two lengths
-    LengthConverter operator+(const LengthConverter& other) const {
-        return LengthConverter(meters + other.meters);
+    Length operator+(Length other)
+    {
+        return Length(meters + other.meters);
     }
 
-    // Conversion operator: meters to centimeters
-    operator double() const {
+    operator double()
+    {
         return meters * 100.0;
     }
 
-    void display() const {
-        std::cout << "Length in meters: " << meters << " m" << std::endl;
+    void display()
+    {
+        cout << "Length in meters: " << meters << " m" << endl;
     }
 };
 
 int main() {
-    LengthConverter length1(5.0); // 5 meters
-    LengthConverter length2(2.5); // 2.5 meters
+    Length length1(5.0);
+    Length length2(2.5);
 
-    LengthConverter totalLength = length1 + length2; // Adding meters
+    Length totalLength = length1 + length2;
 
-    totalLength.display(); // Display the result in meters
+    totalLength.display();
 
-    // Convert total length to centimeters and display
     double totalLengthInCm = totalLength;
     std::cout << "Total length in centimeters: " << totalLengthInCm << " cm" << std::endl;
 
