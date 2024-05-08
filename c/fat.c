@@ -1,70 +1,141 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct node {
+struct node{
     int data;
     struct node *next;
 }*head;
 
-void create(int n)
-{
-    struct node *newNode,*temp;
-    int dat;
-    head=malloc(sizeof(struct node));
-    if(head == NULL)
-    {
-        printf("Unable");
+void createList(int n){
+    struct node *newNode, *temp;
+    int data, i;
+
+    head = malloc(sizeof(struct node));
+
+    if(head == NULL){
+        printf("404");
         exit(0);
     }
 
-    printf("Enter the data of node 1 : ");
-    scand("%d",&dat);
+    printf("Enter data for node 1 :");
+    scanf("%d",&data);
+    
+    head->data = data;
+    head->next = NULL;
+    temp = head;
 
-    head->data=dat;
-    head->next=NULL;
-
-    temp=head;
-    for(int i=2;i<=n;i++)
-    {
-        newNode=malloc(sizeof(struct node));
-        if(newNode==NULL)
-        {
-            printf("Unable to allocate memory");
-            break;
+    for(i=2;i<=n;i++){
+        newNode = malloc(sizeof(struct node));
+        if(newNode == NULL){
+            printf("404");
+            exit(0);
         }
-        printf("Enter the data of node %d : ",i);
-        scanf("%d",&dat);
 
-        newNode->data=dat;
-        newNode->next=NULL;
+        printf("Enter data for node %d :",i);
+        scanf("%d",&data);
 
-        temp->next=newNode;
-        temp=temp->next;
+        newNode->data = data;
+        newNode->next = NULL;
+
+        temp->next = newNode;
+        temp =  newNode;
     }
 }
 
-void traverse()
-{
+void displayList(){
     struct node *temp;
-    if(head==NULL)
-    {
-        printf("list is empty");
+    if(head==NULL){
+        printf("List is empty\n");
         return;
     }
-    while(temp!=NULL)
-    {
-        printf("Data = %d\n",temp->data);
-        temp=temp->next;
+    temp = head;
+    while(temp!=NULL){
+        printf("%d\n",temp->data);
+        temp = temp->next;
     }
+}
+
+
+void insertB(){
+    struct node * newNode;
+    int data;
+    newNode = malloc(sizeof(struct node));
+    if(newNode == NULL){
+        printf("404");
+        exit(0);
+    }
+
+    printf("Enter data to insert at beginning :");
+    scanf("%d",&data);
+
+    newNode->data = data;
+    newNode->next = head;
+    head = newNode;
+}
+
+
+void insertE(){
+    struct node *newNode, *temp;
+    int data;
+    newNode = malloc(sizeof(struct node));
+    if(newNode == NULL){
+        printf("404");
+        exit(0);
+    }
+
+    printf("Enter data to insert at end :");
+    scanf("%d",&data);
+
+    newNode->data = data;
+    newNode->next = NULL;
+
+    temp = head;
+    while(temp->next!=NULL){
+        temp = temp->next;
+    }
+    temp->next = newNode;
 
 }
 
-void inserb(int n)
-{
-    struct node *newNode;
-    newNode=malloc(sizeof(struct node));
+void deleteB(){
+    struct node *toDelete;
+    if(head == NULL){
+        printf("List is empty\n");
+    }else{
+        toDelete = head;
+        head = head->next;
+        printf("Data deleted = %d\n",toDelete->data);
+        free(toDelete);
+    }
+}
 
-    newNode->data=n;
-    newNode->next=head;
-    head=newNode;
+void deleteE(){
+    struct node *toDelete, *secondLast;
+    if(head == NULL){
+        printf("List is empty\n");
+    }else{
+        toDelete = head;
+        secondLast = head;
+        while(toDelete->next!=NULL){
+            secondLast = toDelete;
+            toDelete = toDelete->next;
+        }
+        if(toDelete == head){
+            head = NULL;
+        }else{
+            secondLast->next = NULL;
+        }
+        printf("Data deleted = %d\n",toDelete->data);
+        free(toDelete);
+    }
+}
+
+int main()
+{
+    int n;
+    printf("Enter the number of nodes :");
+    scanf("%d",&n);
+    createList(n);
+    printf("\n Data in the list \n");
+    displayList();
 }

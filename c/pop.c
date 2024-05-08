@@ -7,7 +7,7 @@ int isfull()
 }
 int isempty()
 {
-    if(front>rear)ko
+    if(front>rear)
     {
         front=rear=-1;
     }
