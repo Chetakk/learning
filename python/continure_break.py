@@ -3,7 +3,7 @@ i=0
 while i <= 10:
     i+=1
     if i == 5:
-        print(f"Breaking at {i}") #this will run(anything above continue will run)
+        print(f"Breaking at {i}") #this will run(anything above continue will run in this itration)
         continue
     if i > 10:
         break
