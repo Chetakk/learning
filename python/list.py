@@ -21,3 +21,6 @@ pop_ele=lista.pop(10) #(index) removes and returns the element
 lista.reverse()
 print(lista)
 
+del a[0] #deletes the indexed element
+del a[1:9:2] #deletes as slicing
+del a[:] #delets all the elements
