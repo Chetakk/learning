@@ -7,20 +7,20 @@ public class simplesieve {
 
         boolean bool[] = new boolean[n];
         
-        for(int i = 0;i<bool.length;i++){
+        for(int i = 0;i<n;i++){
             bool[i]=true;
         }
 
-        for(int i = 2; i<Math.sqrt(n); i++){
-            for(int j =(i*i);j<=n;j=j+i){
+        for(int i = 2;i<Math.sqrt(n);i++){
+            if(bool[i])
+            for(int j = i*i;j<n;j=j+i){
                 bool[j]=false;
             }
         }
 
-        for(int i = 2; i<bool.length;i++){
-            if(bool[i]==true){
-                System.out.println(i);
-            }
+        for(int i =2;i<n;i++){
+            if(bool[i])
+            System.out.println(i);
         }
     }
 }
