@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 class rm{
@@ -31,5 +30,6 @@ class rm{
             r[j]=inp.nextInt();
         }
         System.out.print(findMinX(arr,r,size));
+        inp.close();
     }
 }

@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.Scanner;
 
 public class Bubblesort{
@@ -25,5 +24,6 @@ public class Bubblesort{
         for(int i = 0;i<n;i++){
             System.out.print(a[i]+" ");
         }
+        inp.close();
     }
 }

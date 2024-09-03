@@ -21,5 +21,6 @@ public class Main{
         Scanner inp = new Scanner(System.in);
         int a = inp.nextInt();
         System.out.print(phi(a));
+        inp.close();
     }
 }

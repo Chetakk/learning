@@ -1,7 +1,7 @@
 import java.util.*;
 public class sbn {
     static boolean issbn(String num){
-        Map<Character,Character> sbndict = new HashMap();
+        Map<Character,Character> sbndict = new HashMap<>();
         sbndict.put('0','0');
         sbndict.put('1','1');
         sbndict.put('6','9');
@@ -33,5 +33,6 @@ public class sbn {
         else{
             System.out.print(issbn(n));
         }
+        inp.close();
     }
 }

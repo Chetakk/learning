@@ -22,5 +22,6 @@ public class simplesieve {
             if(bool[i])
             System.out.println(i);
         }
+        inp.close();
     }
 }
