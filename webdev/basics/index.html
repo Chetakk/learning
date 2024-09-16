@@ -86,7 +86,7 @@
 <hr>
 
 <br>
-<div>
+<div class="list">
     <p>unordered list</p>
     <ul>
         <li>Apple</li>
@@ -100,10 +100,102 @@
 </div>
 <hr>
 
+<hr>
+<div class="tables">
+        <hr>
+        <p>tables</p>
+        <p>-  tr (table row) tag</p>
+
+        <p>-  td (table data) tag</p>
+        <td></td>
+
+        <p>- th (table header) tag</p>
+        <th colspan ="2">TABLE</th>
+        <!--merging one column for two rows-->
+        <table>
+            <caption>
+                Student Details
+            </caption>
+            <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Roll No.
+                </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>
+                    Chetak
+                </td>
+                <td>
+                    0105
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Krishna
+                </td>
+                <td>
+                    00048
+                </td>
+            </tr>
+            </tbody>
+        </table>
+             
 
 
 
-<div>
+</div>
+
+<hr><hr>
+<div class="form">
+    <p>Form tag</p>
+    <form action="/action.php">
+
+        <input type="text"placeholder="Type Your Name"><br>
+        <input type="password"placeholder="Type Your Password">
+
+        <br><br>
+        Select Your Class<br>
+        <label for="101">
+        <input type="radio" value ="class XI" name="class" id="101">Class XI
+        </label>
+        <label for="102">
+        <input type="radio" value ="class XII" name="class" id="102">Class XII
+        </label>
+        <label for="103">       <!--labels can make the text the part of button-->
+        <input type="radio" value="Under Grad" name="class" id="103">UG
+        </label>
+        <br><br>
+
+        Select Your Subjects<br>
+        <label fpr="201">
+            <input type="checkbox" value="sub1" name="sub" id="201">Maths
+        </label>
+        <label fpr="202"></label>
+            <input type="checkbox" value="sub2" name="sub" id="202">Physics
+        </label>
+        <label fpr="203"></label>
+            <input type="checkbox" value="sub3" name="sub" id="203">Chemistry
+        </label>
+        <label fpr="204"></label>
+            <input type="checkbox" value="sub4" name="sub" id="204">Computer Science
+        </label>
+
+    </form>
+
+</div>
+
+<div id="id1" class="group1"></div>
+<div id="id2" class="group2"></div>
+
+
+<div class="formatting">
 <hr>
     <h4>Formatting tags</h4>
     <!--formatting tags-->
@@ -147,7 +239,7 @@
 
 </div>
 
-<div>
+<div class="layouts">
 <hr>
     <h4>Layouts</h4>
     <header>My page(header)</header><br>
