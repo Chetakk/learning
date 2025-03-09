@@ -25,14 +25,14 @@ def printt():
     
 def search():
     name=input("Enter the name that you want to search for :")
-    if dict1.get(name)!=None:
+    if name in dict1:
         print(dict1.get(name))
     else:
         print("ROCORDS NOT FOUND!!!")
 
 def update():
     name=input("Enter the name :")
-    if dict1.get(name)!=None:
+    if name in dict1:
         gmail=input("Enter the new Email ID :")
         dict1[name]["Email ID"]=gmail
         print(dict1)
@@ -41,7 +41,7 @@ def update():
 
 def deletee():
     name=input("Enter the name :")
-    if dict1.get(name)!=None:
+    if name in dict1:
         del dict1[name]
         print(dict1)
     else:

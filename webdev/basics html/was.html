@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function sum() {
+        event.preventDefault();
+        x = parseInt(document.getElementById("n").value);
+        document.getElementsByTagName("p")[0].innerText = "Sum :" + x;
+      }
+    </script>
+  </head>
+  <body>
+    <form>No :-<input type="text" id="n" /></form>
+    <button onclick="sum()">Sum</button>
+    <p></p>
+  </body>
+</html>
